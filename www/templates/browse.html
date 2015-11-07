@@ -1,5 +1,21 @@
-<ion-view view-title="Browse">
+<ion-view view-title="NewsFeed">
   <ion-content>
+
+    <div class="list card">
+      <label class="item item-input">
+        <textarea placeholder="What are you thinking?" ng-model="newFeed.content">
+        </textarea>
+      </label>
+      <label class="item item-input">
+        <input type="url" placeholder="Image URL" ng-model="newFeed.image">
+      </label>
+      <div class="item">
+        <button class="button button-positive button-block" ng-click="Submit()">
+          Submit
+        </button>
+      </div>
+    </div>
+
     <div class="list card" ng-repeat="feed in feeds">
 
       <div class="item item-avatar">

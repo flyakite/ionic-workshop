@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
-.controller('NewsFeedCtrl', function($scope) {
+.controller('NewsFeedCtrl', function($scope, DataStore) {
   var user = {
     name: 'Marty McFly',
     photo: 'http://ionicframework.com/img/docs/mcfly.jpg'
@@ -77,5 +77,32 @@ angular.module('starter.controllers', [])
       comment: 2
     }
   ];
+
+  $scope.newFeed = {};
+  $scope.Submit = function() {
+
+    //use console.log to print a variable in the console
+    console.log($scope.newFeed);
+
+    var feed = {
+      user: user,
+      image: $scope.newFeed.image,
+      content: $scope.newFeed.content,
+      like: 0,
+      comment: 0
+    };
+
+    $scope.feeds.unshift(feed);
+
+    $scope.newFeed = {};
+
+    DataStore.create('Feed', feed)
+    .then(function(result) {
+      console.log(result);
+    }, function(err) {
+      console.error(err);
+    });
+
+  };
 })
 ;
