@@ -59,13 +59,23 @@ angular.module('starter.controllers', [])
     name: 'Marty McFly',
     photo: 'http://ionicframework.com/img/docs/mcfly.jpg'
   };
-  $scope.feed = {
-    user: user,
-    createdAt: new Date(),
-    image: 'http://ionicframework.com/img/docs/delorean.jpg',
-    content: 'Back to the future!',
-    like: 0,
-    comment: 0
-  };
+  $scope.feeds = [
+    {
+      user: user,
+      createdAt: new Date(),
+      image: 'http://ionicframework.com/img/docs/delorean.jpg',
+      content: 'Back to the future!',
+      like: 0,
+      comment: 0
+    },
+    {
+      user: user,
+      createdAt: new Date("11/5/1995"),
+      image: 'http://ionicframework.com/img/docs/delorean.jpg',
+      content: 'In the past!',
+      like: 1,
+      comment: 2
+    }
+  ];
 })
 ;

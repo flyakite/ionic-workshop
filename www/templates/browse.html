@@ -1,6 +1,6 @@
 <ion-view view-title="Browse">
   <ion-content>
-    <div class="list card">
+    <div class="list card" ng-repeat="feed in feeds">
 
       <div class="item item-avatar">
         <img ng-src="{{feed.user.photo}}">
