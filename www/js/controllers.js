@@ -54,4 +54,18 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
+.controller('NewsFeedCtrl', function($scope) {
+  var user = {
+    name: 'Marty McFly',
+    photo: 'http://ionicframework.com/img/docs/mcfly.jpg'
+  };
+  $scope.feed = {
+    user: user,
+    createdAt: new Date(),
+    image: 'http://ionicframework.com/img/docs/delorean.jpg',
+    content: 'Back to the future!',
+    like: 0,
+    comment: 0
+  };
+})
 ;
